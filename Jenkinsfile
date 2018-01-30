@@ -11,6 +11,7 @@ node ('jnlp-slave') {
     registryHost = "192.168.129.111/library/"
     imageName = "${registryHost}${appName}:${tag}"
     env.BUILDIMG=imageName
+    sh "ln -s /root/.docker/dockercfg /home/jenkins/.dockercfg"
 
     stage "Build"
     
