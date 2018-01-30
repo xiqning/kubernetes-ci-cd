@@ -1,4 +1,4 @@
-node {
+node ('jnlp-slave') {
 
     checkout scm
 
