@@ -16,6 +16,10 @@ node ('jnlp-slave') {
     
         sh "docker build -t ${imageName} -f applications/hello-kenzan/Dockerfile applications/hello-kenzan"
     
+    stage 'Confirm psuhed images'
+
+        input 'Confirm?'
+
     stage "Push"
 
         sh "docker push ${imageName}"
